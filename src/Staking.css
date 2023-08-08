@@ -1,5 +1,5 @@
 .staking-container {
-    border: 10px solid #bbe610;
+    border: 10px solid #defb00;
     padding: 20px;
     margin: 20px;
     border-radius: 8px;
@@ -28,9 +28,10 @@
   
   button {
     padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: yellow;
+    color: #0e0c0c;
     border: none;
+    font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
   }

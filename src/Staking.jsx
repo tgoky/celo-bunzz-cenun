@@ -43,8 +43,9 @@ const Staking = ({ contract, account }) => {
             value={stakeAmount}
             onChange={(e) => setStakeAmount(e.target.value)}
           />
-          <button onClick={handleStake}>Stake</button>
+          <button onClick={handleStake} >Stake</button>
         </div>
+  
         
         <div>
           <label>Unstake Amount:</label>
@@ -53,7 +54,7 @@ const Staking = ({ contract, account }) => {
             value={unstakeAmount}
             onChange={(e) => setUnstakeAmount(e.target.value)}
           />
-          <button onClick={handleUnstake}>Unstake</button>
+          <button onClick={handleUnstake}  style={{ marginLeft: "10px" }}>Unstake</button>
         </div>
       </div>
     </div>
