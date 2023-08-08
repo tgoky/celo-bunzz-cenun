@@ -28,6 +28,24 @@ const Form = () => {
     setBalance(_balance.toString());
   };
 
+  const formatBalance = (balance) => {
+    const tokenDecimals = 18; // Number of decimal places the token has
+    
+    // Divide the balance by 10^18 to convert from wei to token units
+    const balanceInToken = balance / (10 ** tokenDecimals);
+
+    // Use JavaScript's toLocaleString() function to add commas for thousands separation
+    // and round the balance to a fixed number of decimal places (e.g., 2)
+    const formattedBalance = balanceInToken.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+
+    return formattedBalance;
+  };
+
+  
+
   const handleChange = (e) => setValue(e.target.value);
 
   const submit = async () => {
@@ -45,7 +63,7 @@ const Form = () => {
   return (
     <>
       <p>account: {account}</p>
-      <p>balance: {balance}</p>
+      <p>balance: {formatBalance(balance)}</p>
       
       {
         progress ?
