@@ -19,8 +19,8 @@ const App = () => {
     deactivate();
   };
 
-  const connectButton = (<button onClick={connectToWallet}>Connect to Wallet</button>);
-  const disconnectButton = (<button onClick={disconnectWallet}>Disconnect Wallet</button>);
+  const connectButton = (<button onClick={connectToWallet} style={{ backgroundColor: 'yellow', color: 'black', fontWeight: 'bold' }}>Connect to Wallet</button>);
+  const disconnectButton = (<button onClick={disconnectWallet}  style={{ backgroundColor: 'yellow', color: 'black',  fontWeight: 'bold' }}>Disconnect Wallet</button>);
 
   return (
     <div className="App App-header">
