@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useWeb3React } from '@web3-react/core';
 import { Contract } from "ethers";
 
+
 import tokenABI from "./abi.json";
 
-const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
+const contractAddress = '0xddC6be4325173F976aC4A4e5b91154B90B601CF1';
 
 
 const Form = () => {

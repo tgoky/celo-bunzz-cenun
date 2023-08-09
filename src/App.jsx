@@ -5,6 +5,7 @@ import Form from './Form';
 import "./App.css";
 import  Staking from './Staking';
 
+
 const CHAIN_ID = Number(process.env.REACT_APP_CHAIN_ID || 44787);
 const connector = new InjectedConnector({ supportedChainIds: [CHAIN_ID] })
 
@@ -23,6 +24,7 @@ const App = () => {
   const disconnectButton = (<button onClick={disconnectWallet}  style={{ backgroundColor: 'yellow', color: 'black',  fontWeight: 'bold' }}>Disconnect Wallet</button>);
 
   return (
+
     <div className="App App-header">
       {active ? (
         <>
@@ -37,6 +39,7 @@ const App = () => {
       {error ? <p>{error.message}</p> : <></>}
       <Staking/>
     </div>
+
   );
 };
 

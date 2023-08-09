@@ -8,8 +8,8 @@ import { useWeb3React } from "@web3-react/core";
 const tokenAddress = '0xddC6be4325173F976aC4A4e5b91154B90B601CF1'; // Replace with the actual token address
 const contractAddress = '0xa3aba6FC76E33f80138b6d4AB2592968FA1A4Df6'; // Replace with the actual staking contract address
 
-const Staking = ({ account }) => {
-  const { library } = useWeb3React();
+const Staking = () => {
+  const { library, active, account } = useWeb3React();
 
   const [stakeAmount, setStakeAmount] = useState("");
   const [unstakeAmount, setUnstakeAmount] = useState("");
@@ -18,8 +18,10 @@ const Staking = ({ account }) => {
   const [tokenContract, setTokenContract] = useState();
 
   useEffect(() => {
-    if (library) setup(library);
-  }, [library, account]);
+    if (active) {
+      setup(library);
+    }
+  }, [active, library, account]);
 
   const setup = async (_library) => {
     const provider = _library.getSigner();
@@ -33,13 +35,11 @@ const Staking = ({ account }) => {
       setBalance(result.toString());
     });
 
-    // Listen to the "Staked" event
     stakingContract.on("Staked", (user, amount) => {
       console.log("Staked event:", user, amount);
       // Update your UI or state accordingly
     });
 
-    // Listen to the "Withdrawn" event
     stakingContract.on("Withdrawn", (user, amount) => {
       console.log("Withdrawn event:", user, amount);
       // Update your UI or state accordingly
@@ -95,7 +95,6 @@ const Staking = ({ account }) => {
   return (
     <div className="staking-container">
       <h2>Staking</h2>
-      <p>Your Account: {account}</p>
       <p>Your Staked Balance: {formatBalance(balance)}</p>
 
       <div className="action-section">
