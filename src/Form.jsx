@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useWeb3React } from '@web3-react/core';
 import { Contract } from "ethers";
 
-import data from "./abi.json";
+import tokenABI from "./abi.json";
 
 const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
-const abi = data.abi;
+
 
 const Form = () => {
   const { account, library } = useWeb3React();
@@ -21,7 +21,7 @@ const Form = () => {
 
   const setup = async (_library) => {
     const signer = _library.getSigner();
-    const _contract = new Contract(contractAddress, abi, signer);
+    const _contract = new Contract(contractAddress, tokenABI, signer);
     const _balance = await _contract.balanceOf(account);
 
     setContract(_contract);
