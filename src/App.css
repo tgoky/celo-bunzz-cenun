@@ -2,6 +2,9 @@
   text-align: center;
   display: flex; 
   background-color: #478f6a;
+  min-height: 100vh; /* Ensure the App container covers the entire viewport height */
+  width: 100%; /* Ensure the App container covers the entire viewport width */
+  flex-direction: column;
 }
 
 .App-logo {
