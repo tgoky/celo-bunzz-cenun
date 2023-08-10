@@ -1,17 +1,20 @@
+import React, { useState } from 'react';
 import { useWeb3React } from '@web3-react/core';
 import { InjectedConnector } from "@web3-react/injected-connector";
-import cenunlogo from './img/cenun-logo.png'
+import cenunlogo from './img/cenun-logo.png';
 
 import Form from './Form';
+import Staking from './Staking';
+import RenegadeBurning from './RenegadeBurning';
 import "./App.css";
-import  Staking from './Staking';
-
 
 const CHAIN_ID = Number(process.env.REACT_APP_CHAIN_ID || 44787);
-const connector = new InjectedConnector({ supportedChainIds: [CHAIN_ID] })
+const connector = new InjectedConnector({ supportedChainIds: [CHAIN_ID] });
 
 const App = () => {
   const { activate, active, error, deactivate } = useWeb3React();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [currentView, setCurrentView] = useState('staking');
 
   const connectToWallet = async () => {
     await activate(connector);
@@ -21,28 +24,48 @@ const App = () => {
     deactivate();
   };
 
-  const connectButton = (<button onClick={connectToWallet} style={{ backgroundColor: 'yellow', color: 'black', fontWeight: 'bold' }}>Connect to Wallet</button>);
-  const disconnectButton = (<button onClick={disconnectWallet}  style={{ backgroundColor: 'yellow', color: 'black',  fontWeight: 'bold' }}>Disconnect Wallet</button>);
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const renderConnectButton = (
+    <button onClick={connectToWallet} style={{ backgroundColor: 'yellow', color: 'black', fontWeight: 'bold' }}>
+      Connect to Wallet
+    </button>
+  );
+
+  const renderDisconnectButton = (
+    <button onClick={disconnectWallet} style={{ backgroundColor: 'yellow', color: 'black', fontWeight: 'bold' }}>
+      Disconnect Wallet
+    </button>
+  );
 
   return (
-
-    <div className="App App-header">
-<img src={cenunlogo} style={{ width: 450, height: 170, alignContent: 'center' }}/>
-      {active ? (
-        <>
-          <Form />
-          {disconnectButton}
-        </>
-      ) : (
-        <>
-          {connectButton}
-        </>
-      )}
-      {error ? <p>{error.message}</p> : <></>}
-      <Staking/>
-      
+    <div className="App">
+      <div className="sidebar">
+        <button onClick={toggleSidebar}>Toggle Sidebar</button>
+        {active ? renderDisconnectButton : renderConnectButton}
+        <button onClick={() => setCurrentView('staking')}>Staking</button>
+        <button onClick={() => setCurrentView('renegadeBurning')}>Renegade Burning</button>
+      </div>
+      <div className={`main-content ${sidebarOpen ? 'with-sidebar' : ''}`}>
+        <img src={cenunlogo} style={{ width: 450, height: 170, alignContent: 'center' }}/>
+        {currentView === 'staking' && (
+          <>
+            {active ? (
+              <>
+                <Form />
+                {renderDisconnectButton}
+              </>
+            ) : (
+              renderConnectButton
+            )}
+            <Staking />
+          </>
+        )}
+        {currentView === 'renegadeBurning' && <RenegadeBurning />}
+      </div>
     </div>
-
   );
 };
 
