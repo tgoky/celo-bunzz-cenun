@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useCallback} from "react";
 import { ethers } from "ethers";
 import "./Staking.css";
 import stakingABI from "./ABI/staking.json"; // Replace with the correct path to your staking ABI
@@ -17,7 +17,7 @@ const Staking = () => {
   const [contract, setContract] = useState();
   const [tokenContract, setTokenContract] = useState();
 
-  const setup = async (_library) => {
+  const setup = useCallback(async (_library) => {
     const provider = _library.getSigner();
     const stakingContract = new ethers.Contract(contractAddress, stakingABI, provider);
     setContract(stakingContract);
@@ -38,13 +38,13 @@ const Staking = () => {
       console.log("Withdrawn event:", user, amount);
       // Update your UI or state accordingly
     });
-  };
+  }, [account]);
 
   useEffect(() => {
     if (active) {
       setup(library);
     }
-  }, [active, library, account, setup]);
+  }, [active, library, setup]);
 
 
   const handleStake = async () => {
