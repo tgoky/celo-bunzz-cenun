@@ -1,5 +1,6 @@
 import { useWeb3React } from '@web3-react/core';
 import { InjectedConnector } from "@web3-react/injected-connector";
+import cenunlogo from './img/cenun-logo.png'
 
 import Form from './Form';
 import "./App.css";
@@ -26,6 +27,7 @@ const App = () => {
   return (
 
     <div className="App App-header">
+<img src={cenunlogo} style={{ width: 450, height: 170, alignContent: 'center' }}/>
       {active ? (
         <>
           <Form />
@@ -38,6 +40,7 @@ const App = () => {
       )}
       {error ? <p>{error.message}</p> : <></>}
       <Staking/>
+      
     </div>
 
   );
