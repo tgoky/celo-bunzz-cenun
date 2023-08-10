@@ -50,7 +50,7 @@ const Form = () => {
   return (
     <>
       <p style={{ fontWeight: 'bold' }}>cenun account: {account}</p>
-      <p style={{ fontWeight: 'bold', color: 'white' }}>cenun balance: {formatBalance(balance)}</p>
+      <p style={{ fontWeight: 'bold', color: '#7D0552' }}>cenun balance: {formatBalance(balance)}</p>
     </>
   );
 }

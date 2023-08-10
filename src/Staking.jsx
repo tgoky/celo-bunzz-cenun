@@ -96,7 +96,7 @@ const Staking = () => {
   return (
     <div className="staking-container">
       <h2>Staking</h2>
-      <p style={{ fontWeight: 'bold', color: 'white'}}>Your Staked Balance: {formatBalance(balance)}</p>
+      <p style={{ fontWeight: 'bold', color: '#7D0552'}}>Your Staked Balance: {formatBalance(balance)}</p>
 
       <div className="action-section">
         <div>
