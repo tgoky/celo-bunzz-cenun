@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import { useWeb3React } from '@web3-react/core';
 import { Contract } from "ethers";
 
-
 import tokenABI from "./abi.json";
 
 const contractAddress = '0xddC6be4325173F976aC4A4e5b91154B90B601CF1';
-
 
 const Form = () => {
   const { account, library } = useWeb3React();
@@ -14,7 +12,6 @@ const Form = () => {
   const [balance, setBalance] = useState();
   const [progress, setProgress] = useState(false);
   const [value, setValue] = useState(0);
-
 
   useEffect(() => {
     if (library) setup(library);
@@ -31,12 +28,7 @@ const Form = () => {
 
   const formatBalance = (balance) => {
     const tokenDecimals = 18; // Number of decimal places the token has
-    
-    // Divide the balance by 10^18 to convert from wei to token units
     const balanceInToken = balance / (10 ** tokenDecimals);
-
-    // Use JavaScript's toLocaleString() function to add commas for thousands separation
-    // and round the balance to a fixed number of decimal places (e.g., 2)
     const formattedBalance = balanceInToken.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
@@ -45,32 +37,23 @@ const Form = () => {
     return formattedBalance;
   };
 
-  
-
   const handleChange = (e) => setValue(e.target.value);
 
-  const submit = async () => {
-    try {
-      const tx = await contract.mint(account, value);
-      setProgress(true);
-
-      await tx.wait();
-      alert("Transaction was sent in success🎉");
-    } finally {
-      setProgress(false);
-    }
+  const submit =  () => {
+    
   };
 
   return (
     <>
-      <p style={{ fontWeight: 'bold'}}>cenun account: {account}</p>
-      <p style={{ fontWeight: 'bold', color: 'white'}}>cenun balance: {formatBalance(balance)}</p>
+      <p style={{ fontWeight: 'bold' }}>cenun account: {account}</p>
+      <p style={{ fontWeight: 'bold', color: 'white' }}>cenun balance: {formatBalance(balance)}</p>
       
       {
         progress ?
           <p>The transaction is pending...</p> :
           <div>
-          
+            {/* Form input fields and submit button */}
+            <button onClick={submit} style={{ backgroundColor: '#2f3d58', color:'white'}}>Welcome to Cenun Defi</button>
           </div>
       }
     </>

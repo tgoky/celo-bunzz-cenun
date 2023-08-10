@@ -12,7 +12,7 @@ const CHAIN_ID = Number(process.env.REACT_APP_CHAIN_ID || 44787);
 const connector = new InjectedConnector({ supportedChainIds: [CHAIN_ID] });
 
 const App = () => {
-  const { activate, active, error, deactivate } = useWeb3React();
+  const { activate, active, deactivate } = useWeb3React();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentView, setCurrentView] = useState('staking');
 
@@ -28,14 +28,8 @@ const App = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const renderConnectButton = (
-    <button onClick={connectToWallet} style={{ backgroundColor: 'yellow', color: 'black', fontWeight: 'bold' }}>
-      Connect to Wallet
-    </button>
-  );
-
   const renderDisconnectButton = (
-    <button onClick={disconnectWallet} style={{ backgroundColor: 'yellow', color: 'black', fontWeight: 'bold' }}>
+    <button onClick={disconnectWallet} style={{ backgroundColor: 'yellow', color: 'black', fontWeight: 'bold', margin: '10px auto', display: 'block' }}>
       Disconnect Wallet
     </button>
   );
@@ -44,23 +38,21 @@ const App = () => {
     <div className="App">
       <div className="sidebar">
         <button onClick={toggleSidebar}>Cenun Defi</button>
-        {active ? renderDisconnectButton : renderConnectButton}
+        {active ? renderDisconnectButton : (
+          <button onClick={connectToWallet} style={{ backgroundColor: 'yellow', color: 'black', fontWeight: 'bold' }}>
+            Connect to Wallet
+          </button>
+        )}
         <button onClick={() => setCurrentView('staking')}>Staking</button>
         <button onClick={() => setCurrentView('renegadeBurning')}>Renegade Burning</button>
       </div>
       <div className={`main-content ${sidebarOpen ? 'with-sidebar' : ''}`}>
-        <img src={cenunlogo} style={{ width: 450, height: 170, alignContent: 'center',marginTop: '-13px' ,}}/>
+        <img src={cenunlogo} style={{ width: 450, height: 170, alignContent: 'center', marginTop: '-13px' }}/>
         {currentView === 'staking' && (
           <>
-            {active ? (
-              <>
-                <Form />
-                {renderDisconnectButton}
-              </>
-            ) : (
-              renderConnectButton
-            )}
+            <Form />
             <Staking />
+            {active && renderDisconnectButton}
           </>
         )}
         {currentView === 'renegadeBurning' && <RenegadeBurning />}
