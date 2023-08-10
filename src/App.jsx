@@ -49,7 +49,7 @@ const App = () => {
         <button onClick={() => setCurrentView('renegadeBurning')}>Renegade Burning</button>
       </div>
       <div className={`main-content ${sidebarOpen ? 'with-sidebar' : ''}`}>
-        <img src={cenunlogo} style={{ width: 450, height: 170, alignContent: 'center' }}/>
+        <img src={cenunlogo} style={{ width: 450, height: 170, alignContent: 'center',marginTop: '-13px' ,}}/>
         {currentView === 'staking' && (
           <>
             {active ? (

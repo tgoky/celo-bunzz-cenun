@@ -99,7 +99,7 @@ const Staking = () => {
 
       <div className="action-section">
         <div>
-          <label style={{ fontWeight: 'bold'}}>Stake Amount:</label>
+          <label style={{ fontWeight: 'bold', }}>Stake Amount:</label>
           <input
             type="number"
             value={stakeAmount}
