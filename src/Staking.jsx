@@ -44,7 +44,7 @@ const Staking = () => {
     if (active) {
       setup(library);
     }
-  }, [active, library, account]);
+  }, [active, library, account, setup]);
 
 
   const handleStake = async () => {
