@@ -95,11 +95,11 @@ const Staking = () => {
   return (
     <div className="staking-container">
       <h2>Staking</h2>
-      <p>Your Staked Balance: {formatBalance(balance)}</p>
+      <p style={{ fontWeight: 'bold', color: 'white'}}>Your Staked Balance: {formatBalance(balance)}</p>
 
       <div className="action-section">
         <div>
-          <label>Stake Amount:</label>
+          <label style={{ fontWeight: 'bold'}}>Stake Amount:</label>
           <input
             type="number"
             value={stakeAmount}
@@ -109,7 +109,7 @@ const Staking = () => {
         </div>
 
         <div>
-          <label>Unstake Amount:</label>
+          <label style={{ fontWeight: 'bold'}}>Unstake Amount:</label>
           <input
             type="number"
             value={unstakeAmount}

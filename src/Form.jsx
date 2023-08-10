@@ -64,7 +64,7 @@ const Form = () => {
   return (
     <>
       <p style={{ fontWeight: 'bold'}}>cenun account: {account}</p>
-      <p>cenun balance: {formatBalance(balance)}</p>
+      <p style={{ fontWeight: 'bold', color: 'white'}}>cenun balance: {formatBalance(balance)}</p>
       
       {
         progress ?
