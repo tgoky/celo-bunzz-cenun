@@ -63,8 +63,8 @@ const Form = () => {
 
   return (
     <>
-      <p>account: {account}</p>
-      <p>balance: {formatBalance(balance)}</p>
+      <p style={{ fontWeight: 'bold'}}>cenun account: {account}</p>
+      <p>cenun balance: {formatBalance(balance)}</p>
       
       {
         progress ?

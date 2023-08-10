@@ -43,7 +43,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="sidebar">
-        <button onClick={toggleSidebar}>Toggle Sidebar</button>
+        <button onClick={toggleSidebar}>Cenun Defi</button>
         {active ? renderDisconnectButton : renderConnectButton}
         <button onClick={() => setCurrentView('staking')}>Staking</button>
         <button onClick={() => setCurrentView('renegadeBurning')}>Renegade Burning</button>
