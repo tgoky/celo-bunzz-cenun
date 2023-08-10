@@ -1,14 +1,13 @@
 import React from 'react';
 
-
-const RenegadeBurning = () => {
-
-
-
-
+class RenegadeBurning extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>Renegade Burning</p>
+      </div>
+    );
+  }
 }
-
-
-
 
 export default RenegadeBurning;
