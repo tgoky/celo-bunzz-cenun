@@ -17,6 +17,13 @@ const Form = () => {
     if (library) setup(library);
   }, [library, account]);
 
+  // Clear balance when account disconnects
+  useEffect(() => {
+    if (!account) {
+      setBalance(null);
+    }
+  }, [account]);
+
   const setup = async (_library) => {
     const signer = _library.getSigner();
     const _contract = new Contract(contractAddress, tokenABI, signer);
@@ -27,8 +34,13 @@ const Form = () => {
   };
 
   const formatBalance = (balance) => {
-    const tokenDecimals = 18; // Number of decimal places the token has
+    if (balance === null) {
+      return 'Disconnected';
+    }
+
+    const tokenDecimals = 18;
     const balanceInToken = balance / (10 ** tokenDecimals);
+
     const formattedBalance = balanceInToken.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
@@ -40,20 +52,19 @@ const Form = () => {
   const handleChange = (e) => setValue(e.target.value);
 
   const submit =  () => {
-    
+   
   };
 
   return (
     <>
       <p style={{ fontWeight: 'bold' }}>cenun account: {account}</p>
       <p style={{ fontWeight: 'bold', color: 'white' }}>cenun balance: {formatBalance(balance)}</p>
-      
+
       {
         progress ?
           <p>The transaction is pending...</p> :
           <div>
-            {/* Form input fields and submit button */}
-            <button onClick={submit} style={{ backgroundColor: '#2f3d58', color:'white'}}>Welcome to Cenun Defi</button>
+            {/* Your form inputs and submit button */}
           </div>
       }
     </>
