@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useWeb3React } from '@web3-react/core';
 import { Contract } from "ethers";
 
@@ -10,13 +10,13 @@ const Form = () => {
   const { account, library } = useWeb3React();
   const [balance, setBalance] = useState();
 
-  const setup = async (_library) => {
+  const setup = useCallback(async (_library) => {
     const signer = _library.getSigner();
     const _contract = new Contract(contractAddress, tokenABI, signer);
     const _balance = await _contract.balanceOf(account);
 
     setBalance(_balance.toString());
-  };
+  }, [account]);
 
   useEffect(() => {
     if (library) {
