@@ -17,12 +17,6 @@ const Staking = () => {
   const [contract, setContract] = useState();
   const [tokenContract, setTokenContract] = useState();
 
-  useEffect(() => {
-    if (active) {
-      setup(library);
-    }
-  }, [active, library, account]);
-
   const setup = async (_library) => {
     const provider = _library.getSigner();
     const stakingContract = new ethers.Contract(contractAddress, stakingABI, provider);
@@ -45,6 +39,13 @@ const Staking = () => {
       // Update your UI or state accordingly
     });
   };
+
+  useEffect(() => {
+    if (active) {
+      setup(library);
+    }
+  }, [active, library, account]);
+
 
   const handleStake = async () => {
     if (stakeAmount > 0 && contract && tokenContract) {
@@ -125,4 +126,3 @@ const Staking = () => {
 };
 
 export default Staking;
-

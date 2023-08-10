@@ -10,17 +10,6 @@ const Form = () => {
   const { account, library } = useWeb3React();
   const [balance, setBalance] = useState();
 
-  useEffect(() => {
-    if (library) setup(library);
-  }, [library, account]);
-
-  // Clear balance when account disconnects
-  useEffect(() => {
-    if (!account) {
-      setBalance(null);
-    }
-  }, [account]);
-
   const setup = async (_library) => {
     const signer = _library.getSigner();
     const _contract = new Contract(contractAddress, tokenABI, signer);
@@ -28,6 +17,19 @@ const Form = () => {
 
     setBalance(_balance.toString());
   };
+
+  useEffect(() => {
+    if (library) {
+      setup(library);
+    }
+  }, [library, account, setup]);
+
+  // Clear balance when account disconnects
+  useEffect(() => {
+    if (!account) {
+      setBalance(null);
+    }
+  }, [account]);
 
   const formatBalance = (balance) => {
     if (balance === null) {
