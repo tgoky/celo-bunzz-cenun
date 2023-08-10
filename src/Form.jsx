@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useWeb3React } from '@web3-react/core';
 import { Contract } from "ethers";
 
@@ -8,10 +8,7 @@ const contractAddress = '0xddC6be4325173F976aC4A4e5b91154B90B601CF1';
 
 const Form = () => {
   const { account, library } = useWeb3React();
-  const [contract, setContract] = useState();
   const [balance, setBalance] = useState();
-  const [progress, setProgress] = useState(false);
-  const [value, setValue] = useState(0);
 
   useEffect(() => {
     if (library) setup(library);
@@ -29,7 +26,6 @@ const Form = () => {
     const _contract = new Contract(contractAddress, tokenABI, signer);
     const _balance = await _contract.balanceOf(account);
 
-    setContract(_contract);
     setBalance(_balance.toString());
   };
 
@@ -49,24 +45,10 @@ const Form = () => {
     return formattedBalance;
   };
 
-  const handleChange = (e) => setValue(e.target.value);
-
-  const submit =  () => {
-   
-  };
-
   return (
     <>
       <p style={{ fontWeight: 'bold' }}>cenun account: {account}</p>
       <p style={{ fontWeight: 'bold', color: 'white' }}>cenun balance: {formatBalance(balance)}</p>
-
-      {
-        progress ?
-          <p>The transaction is pending...</p> :
-          <div>
-            {/* Your form inputs and submit button */}
-          </div>
-      }
     </>
   );
 }
