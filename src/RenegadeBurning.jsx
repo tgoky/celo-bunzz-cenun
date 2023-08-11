@@ -12,7 +12,8 @@ const RenegadeBurning = () => {
   const { library, active, account } = useWeb3React();
 
   const [stakedTokens, setStakedTokens] = useState("");
-  const [claimedNewTokens, setClaimedNewTokens] = useState(0); // New state for claimed tokens
+  const [claimedNewTokens, setClaimedNewTokens] = useState(0);
+  const [stakedBalance, setStakedBalance] = useState(0); // New state for staked balance
   const [contract, setContract] = useState();
   const [newTokenContract, setNewTokenContract] = useState();
 
@@ -23,7 +24,11 @@ const RenegadeBurning = () => {
 
     const _newTokenContract = new ethers.Contract(newTokenAddress, NewTokenInterface, provider);
     setNewTokenContract(_newTokenContract);
-  }, []);
+
+    // Fetch and set the staked balance
+    const balance = await burnClaimContract.stakedBalance(account);
+    setStakedBalance(balance.toString());
+  }, [account]);
 
   useEffect(() => {
     if (active) {
@@ -40,7 +45,11 @@ const RenegadeBurning = () => {
         await claimTx.wait();
 
         // Update the claimed new tokens state
-        setClaimedNewTokens(Number(stakedTokens) / 1000); // Assuming 1000 staked tokens = 1 new token
+        setClaimedNewTokens(Number(stakedTokens) / 1000);
+
+        // Update the staked balance after claiming
+        const balance = await contract.stakedBalance(account);
+        setStakedBalance(balance.toString());
 
         setStakedTokens("");
       } catch (error) {
@@ -52,6 +61,10 @@ const RenegadeBurning = () => {
   return (
     <div className="burn-claim-container">
       <h2>Burn Claim</h2>
+
+      <div className="balance-section">
+        <p>Your Staked Balance: {stakedBalance}</p>
+      </div>
 
       <div className="action-section">
         <div>
