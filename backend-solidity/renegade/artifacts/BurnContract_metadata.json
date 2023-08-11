@@ -1,0 +1,155 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_stakingContractAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_newTokenAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "stakedTokens",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newTokenAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "NewTokenClaimed",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "stakedTokens",
+						"type": "uint256"
+					}
+				],
+				"name": "claimNewTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "conversionRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "newToken",
+				"outputs": [
+					{
+						"internalType": "contract NewTokenInterface",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakingContract",
+				"outputs": [
+					{
+						"internalType": "contract StakingContractInterface",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"claimburn.sol": "BurnContract"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"NewTokenInterface.sol": {
+			"keccak256": "0x83151e4a593aa256aeeb4007e75464e10fb689d45e8e4d3c7753063a318bb422",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e5f816d29cd93cce2bde42e2d8409e8bcaa66edfc70c89995a7b813099d0e625",
+				"dweb:/ipfs/QmecjkmuVAKMVQ7pSr7Kk3bgAWB24ujTzMtiM3DfKER63N"
+			]
+		},
+		"StakingContractInterface.sol": {
+			"keccak256": "0xf69de83ea3d246fbf778e98dbfbe816e3d74aac2802ea2836a6fa93521cb46b7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://46e853cbd2fac8bded67eeeb6a87291e3f5afe32e4e4e95418c9100a20c9a6e6",
+				"dweb:/ipfs/QmY93t1LJegFkTjTyZa15qQsq7fSvvXLHZbsq8jkwHo4SU"
+			]
+		},
+		"claimburn.sol": {
+			"keccak256": "0x90395d72605b977c5d610c2f34a9740c55912c3a06e719192dd3c6e46a232603",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb2fb00139160763a16d033dd635a50ee0e0798fe98c44b3538212ed96f7b704",
+				"dweb:/ipfs/QmY6WA2xifjPXWZJigdjZixeQZamwEAX27PDnRZR9nP8Xu"
+			]
+		}
+	},
+	"version": 1
+}
