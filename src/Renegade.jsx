@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { ethers } from "ethers";
-import "./BurnClaim.css"; // Replace with your CSS file
+import "./Renegade.css"; // Replace with your CSS file
 import { useWeb3React } from "@web3-react/core";
 import { BurnClaimContractInterface } from "./ABI/burnclaim.json"; // Replace with your burn claim contract ABI
 import { NewTokenInterface } from "./ABI/newToken.json"; // Replace with your new token ABI

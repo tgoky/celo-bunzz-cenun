@@ -1,0 +1,38 @@
+.burn-claim-container {
+    border: 10px solid #defb00;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .action-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .action-section div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: yellow;
+    color: #0e0c0c;
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
