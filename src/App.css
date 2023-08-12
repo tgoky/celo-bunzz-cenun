@@ -48,6 +48,12 @@
   border: none;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+}
+
+.sidebar-button:hover {
+  background-color: rgb(16, 41, 59); /* Change to the desired hover background color */
+  color: white; /* Change to the desired hover text color */
 }
 
 
