@@ -52,6 +52,16 @@ const RenegadeBurning = () => {
   }, [newTokenContract, account]);
 
 
+  const formatBalance = (balance) => {
+    const tokenDecimals = 18;
+    const balanceInToken = balance / 10 ** tokenDecimals;
+    const formattedBalance = balanceInToken.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    return formattedBalance;
+  };
+
   const handleClaimTokens = async () => {
     if (stakedTokens > 0 && contract && newTokenContract) {
       try {
@@ -94,7 +104,7 @@ const RenegadeBurning = () => {
       )}
 
       {/* Display wallet's new token balance */}
-      <p>Wallet New Token Balance: {walletNewTokenBalance.toString()}</p>
+      <p>Wallet New Token Balance: {formatBalance(walletNewTokenBalance)}</p>
     </div>
   );
 };
