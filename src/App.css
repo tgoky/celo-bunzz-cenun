@@ -59,7 +59,7 @@
 .sidebar-links {
   display: flex;
   justify-content: center;
-  margin-top: 490px; /* Push the links to the bottom */
+  margin-top: 404px; /* Push the links to the bottom */
 }
 
 .sidebar-icon {

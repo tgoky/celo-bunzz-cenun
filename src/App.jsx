@@ -52,8 +52,8 @@ const App = () => {
         >Renegade Hydrant</button>
           {/* Add Medium and GitBook links with icons */}
           <div className="sidebar-links">
-          <a href="https://medium.com" target="_blank" rel="noopener noreferrer"><FaGithub className="sidebar-icon" /></a>
-          <a href="https://gitbook.com" target="_blank" rel="noopener noreferrer"><FaRegFileAlt className="sidebar-icon" /></a>
+          <a href="https://github.com/tgoky/celo-bunzz-cenun" target="_blank" rel="noopener noreferrer"><FaGithub className="sidebar-icon" /></a>
+          <a href="https://tgoky.gitbook.io/cenun-defi-documentation/" target="_blank" rel="noopener noreferrer"><FaRegFileAlt className="sidebar-icon" /></a>
         </div>
       </div>
       <div className={`main-content ${sidebarOpen ? 'with-sidebar' : ''}`}>
