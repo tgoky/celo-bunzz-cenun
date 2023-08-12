@@ -1,13 +1,13 @@
 import React, { useState, useEffect , useCallback} from "react";
 import { ethers } from "ethers";
 import "./Staking.css";
-import stakingABI from "./ABI/staking.json"; // Replace with the correct path to your staking ABI
-import tokenABI from "./abi.json"; // Replace with the correct path to your token ABI
+import stakingABI from "./ABI/staking.json"; 
+import tokenABI from "./abi.json"; 
 import { useWeb3React } from "@web3-react/core";
 
 
-const tokenAddress = '0xddC6be4325173F976aC4A4e5b91154B90B601CF1'; // Replace with the actual token address
-const contractAddress = '0xa3aba6FC76E33f80138b6d4AB2592968FA1A4Df6'; // Replace with the actual staking contract address
+const tokenAddress = '0xddC6be4325173F976aC4A4e5b91154B90B601CF1'; 
+const contractAddress = '0xa3aba6FC76E33f80138b6d4AB2592968FA1A4Df6'; 
 
 const Staking = () => {
   const { library, active, account } = useWeb3React();

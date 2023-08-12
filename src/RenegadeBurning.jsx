@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { ethers } from "ethers";
-import "./Renegade.css"; // Replace with your CSS file
+import "./Renegade.css"; 
 import { useWeb3React } from "@web3-react/core";
-import  BurnClaimContractInterface  from "./ABI/burnclaim.json"; // Replace with your burn claim contract ABI
-import  NewTokenInterface  from "./ABI/newToken.json"; // Replace with your new token ABI
+import  BurnClaimContractInterface  from "./ABI/burnclaim.json"; 
+import  NewTokenInterface  from "./ABI/newToken.json"; 
 
 const burnClaimContractAddress = '0x08eA7F4889861BA91bAFC6A30357c507A4481Aec';
 const newTokenAddress = '0xF07b67c2Deb435e34424696025981dFE15Ef5fdf';
