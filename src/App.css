@@ -66,12 +66,13 @@
   font-size: 24px;
   margin: 0 10px;
 
-  color: #000;
+  color: rgb(0, 255, 242);
   transition: color 0.3s;
 }
 
 .sidebar-icon:hover {
-  color: blue; /* Change to the desired hover color */
+  color: #e1d81c;
+   /* Change to the desired hover color */
 }
 
 
