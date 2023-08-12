@@ -82,7 +82,7 @@ const RenegadeBurning = () => {
 
   return (
     <div className="burn-claim-container">
-      <h2>Renegade Hydrant</h2>
+      <h2 style={{color: 'pink'}}>Renegade Hydrant</h2>
 
       <div className="action-section">
         <div>
@@ -99,13 +99,13 @@ const RenegadeBurning = () => {
 
       {/* Display the claimed new tokens */}
       {claimedNewTokens > 0 && (
-        <p>Claimed New Tokens: {claimedNewTokens}</p>
+        <p style={{fontWeight:'bold'}}>Claimed New Tokens: {claimedNewTokens}</p>
 
         
       )}
 
       {/* Display wallet's new token balance */}
-      <p>Wallet reCenun Balance: {formatBalance(walletNewTokenBalance)}</p>
+      <p style={{fontWeight:'bold'}}>Wallet reCenun Balance: {formatBalance(walletNewTokenBalance)}</p>
     </div>
   );
 };
