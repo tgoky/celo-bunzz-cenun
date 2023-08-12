@@ -44,7 +44,7 @@ const App = () => {
           </button>
         )}
         <button onClick={() => setCurrentView('staking')}>Staking</button>
-        <button onClick={() => setCurrentView('renegadeBurning')}>Renegade Burning</button>
+        <button onClick={() => setCurrentView('renegadeBurning')}>Renegade Hydrant</button>
       </div>
       <div className={`main-content ${sidebarOpen ? 'with-sidebar' : ''}`}>
         <img src={cenunlogo}   alt="Cenun Defi Logo"   style={{ width: 450, height: 170, alignContent: 'center', marginTop: '-13px' }}/>

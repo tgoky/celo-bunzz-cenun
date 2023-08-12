@@ -82,17 +82,18 @@ const RenegadeBurning = () => {
 
   return (
     <div className="burn-claim-container">
-      <h2>Burn Claim</h2>
+      <h2>Renegade Hydrant</h2>
 
       <div className="action-section">
         <div>
-          <label style={{ fontWeight: 'bold' }}>Staked Tokens:</label>
+          <label style={{ fontWeight: 'bold' }}>Use Staked Cenun </label>
+          <label style={{ fontWeight: 'bold' }}>to claim reCenun </label>
           <input
             type="number"
             value={stakedTokens}
             onChange={(e) => setStakedTokens(e.target.value)}
           />
-          <button onClick={handleClaimTokens}>Claim New Tokens</button>
+          <button onClick={handleClaimTokens}>Claim reCenun</button>
         </div>
       </div>
 
@@ -104,7 +105,7 @@ const RenegadeBurning = () => {
       )}
 
       {/* Display wallet's new token balance */}
-      <p>Wallet New Token Balance: {formatBalance(walletNewTokenBalance)}</p>
+      <p>Wallet reCenun Balance: {formatBalance(walletNewTokenBalance)}</p>
     </div>
   );
 };
