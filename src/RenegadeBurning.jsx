@@ -99,14 +99,18 @@ const RenegadeBurning = () => {
 
       {/* Display the claimed new tokens */}
       {claimedNewTokens > 0 && (
-        <p style={{fontWeight:'bold'}}>Claimed New Tokens: {claimedNewTokens}</p>
+        <p style={{fontWeight:'bold'}}>You just claimed : {claimedNewTokens} reCenun</p>
 
         
       )}
 
       {/* Display wallet's new token balance */}
       <p style={{fontWeight:'bold'}}>Wallet reCenun Balance: {formatBalance(walletNewTokenBalance)}</p>
+      <div className="text-container">
+        <p style={{ border: '1px solid black', padding: '10px' , fontFamily: 'monospace', }}>Conversion Rate: 1 Staked Cenun = 0.001 reCenun </p>
+      </div>
     </div>
+    
   );
 };
 
