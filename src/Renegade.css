@@ -6,13 +6,13 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .action-section {
+  .action-sectionx {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
   }
   
-  .action-section div {
+  .action-sectionx div {
     display: flex;
     flex-direction: column;
   }

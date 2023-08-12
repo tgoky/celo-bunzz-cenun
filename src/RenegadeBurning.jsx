@@ -13,28 +13,44 @@ const RenegadeBurning = () => {
 
   const [stakedTokens, setStakedTokens] = useState("");
   const [claimedNewTokens, setClaimedNewTokens] = useState(0);
-  const [stakedBalance, setStakedBalance] = useState(0); // New state for staked balance
   const [contract, setContract] = useState();
   const [newTokenContract, setNewTokenContract] = useState();
+  const [walletNewTokenBalance, setWalletNewTokenBalance] = useState(0); // New state for wallet's new token balance
 
   const setup = useCallback(async (_library) => {
     const provider = _library.getSigner();
-    const burnClaimContract = new ethers.Contract(burnClaimContractAddress, BurnClaimContractInterface, provider);
+    const burnClaimContract = new ethers.Contract(
+      burnClaimContractAddress,
+      BurnClaimContractInterface,
+      provider
+    );
     setContract(burnClaimContract);
 
-    const _newTokenContract = new ethers.Contract(newTokenAddress, NewTokenInterface, provider);
+    const _newTokenContract = new ethers.Contract(
+      newTokenAddress,
+      NewTokenInterface,
+      provider
+    );
     setNewTokenContract(_newTokenContract);
-
-    // Fetch and set the staked balance
-    const balance = await burnClaimContract.stakedBalance(account);
-    setStakedBalance(balance.toString());
-  }, [account]);
+  }, []);
 
   useEffect(() => {
     if (active) {
       setup(library);
     }
   }, [active, library, setup]);
+
+  useEffect(() => {
+    async function fetchWalletNewTokenBalance() {
+      if (newTokenContract && account) {
+        const balance = await newTokenContract.balanceOf(account);
+        setWalletNewTokenBalance(balance);
+      }
+    }
+
+    fetchWalletNewTokenBalance();
+  }, [newTokenContract, account]);
+
 
   const handleClaimTokens = async () => {
     if (stakedTokens > 0 && contract && newTokenContract) {
@@ -45,11 +61,7 @@ const RenegadeBurning = () => {
         await claimTx.wait();
 
         // Update the claimed new tokens state
-        setClaimedNewTokens(Number(stakedTokens) / 1000);
-
-        // Update the staked balance after claiming
-        const balance = await contract.stakedBalance(account);
-        setStakedBalance(balance.toString());
+        setClaimedNewTokens(Number(stakedTokens) / 1000); // Assuming 1000 staked tokens = 1 new token
 
         setStakedTokens("");
       } catch (error) {
@@ -61,10 +73,6 @@ const RenegadeBurning = () => {
   return (
     <div className="burn-claim-container">
       <h2>Burn Claim</h2>
-
-      <div className="balance-section">
-        <p>Your Staked Balance: {stakedBalance}</p>
-      </div>
 
       <div className="action-section">
         <div>
@@ -81,7 +89,12 @@ const RenegadeBurning = () => {
       {/* Display the claimed new tokens */}
       {claimedNewTokens > 0 && (
         <p>Claimed New Tokens: {claimedNewTokens}</p>
+
+        
       )}
+
+      {/* Display wallet's new token balance */}
+      <p>Wallet New Token Balance: {walletNewTokenBalance.toString()}</p>
     </div>
   );
 };
