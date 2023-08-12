@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useWeb3React } from '@web3-react/core';
 import { InjectedConnector } from "@web3-react/injected-connector";
 import cenunlogo from './img/cenun-logo.png';
-import { FaMedium, FaRegFileAlt} from 'react-icons/fa'; 
+import { FaGithub, FaRegFileAlt} from 'react-icons/fa'; 
 
 import Form from './Form';
 import Staking from './Staking';
@@ -52,7 +52,7 @@ const App = () => {
         >Renegade Hydrant</button>
           {/* Add Medium and GitBook links with icons */}
           <div className="sidebar-links">
-          <a href="https://medium.com" target="_blank" rel="noopener noreferrer"><FaMedium className="sidebar-icon" /></a>
+          <a href="https://medium.com" target="_blank" rel="noopener noreferrer"><FaGithub className="sidebar-icon" /></a>
           <a href="https://gitbook.com" target="_blank" rel="noopener noreferrer"><FaRegFileAlt className="sidebar-icon" /></a>
         </div>
       </div>
