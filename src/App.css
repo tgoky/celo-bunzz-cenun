@@ -56,6 +56,24 @@
   color: white; /* Change to the desired hover text color */
 }
 
+.sidebar-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 490px; /* Push the links to the bottom */
+}
+
+.sidebar-icon {
+  font-size: 24px;
+  margin: 0 10px;
+
+  color: #000;
+  transition: color 0.3s;
+}
+
+.sidebar-icon:hover {
+  color: blue; /* Change to the desired hover color */
+}
+
 
 @keyframes App-logo-spin {
   from {
