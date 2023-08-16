@@ -6,8 +6,8 @@ import tokenABI from "./abi.json";
 import { useWeb3React } from "@web3-react/core";
 
 
-const tokenAddress = '0xddC6be4325173F976aC4A4e5b91154B90B601CF1'; 
-const contractAddress = '0xa3aba6FC76E33f80138b6d4AB2592968FA1A4Df6'; 
+const tokenAddress = '0x3F1f2DaD43c43F688B44130c7Ac52cFe6FfBAb8F'; 
+const contractAddress = '0x6Bc6fE4ADbFaa94d7b874AB31fA8D271C44E6147'; 
 
 const Staking = () => {
   const { library, active, account } = useWeb3React();

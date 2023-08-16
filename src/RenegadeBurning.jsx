@@ -5,8 +5,8 @@ import { useWeb3React } from "@web3-react/core";
 import  BurnClaimContractInterface  from "./ABI/burnclaim.json"; 
 import  NewTokenInterface  from "./ABI/newToken.json"; 
 
-const burnClaimContractAddress = '0x08eA7F4889861BA91bAFC6A30357c507A4481Aec';
-const newTokenAddress = '0xF07b67c2Deb435e34424696025981dFE15Ef5fdf';
+const burnClaimContractAddress = '0x52B81343277ce7816b45054A7D50b9512Fe08991';
+const newTokenAddress = '0x18cD9F2BC3742F50AB3a0729FD1844384cfC7F06';
 
 const RenegadeBurning = () => {
   const { library, active, account } = useWeb3React();
