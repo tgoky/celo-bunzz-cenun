@@ -61,6 +61,20 @@ USE STAKED CENUN TO CLAIM RENUN: 0x52B81343277ce7816b45054A7D50b9512Fe08991
 reCENUN:  0x18cD9F2BC3742F50AB3a0729FD1844384cfC7F06
 
 
+SETTING UP THE PROJECT:
+
+Clone Repository using "Git clone" and repo link
+Navigate to the project directory and yarn install
+redeploy contracts on buzz smart contract hub
+replace contract addresses and test
+
+
+<img width="1075" alt="cenun1" src="https://github.com/tgoky/celo-bunzz-cenun/assets/62885573/cafb3b4c-e9c4-43b2-90b1-5267cc4145da">
+
+<img width="1075" alt="cenun2" src="https://github.com/tgoky/celo-bunzz-cenun/assets/62885573/c5f9906b-0a4d-4bb3-b02f-fbce85c71932">
+
+
+
 
 
 
