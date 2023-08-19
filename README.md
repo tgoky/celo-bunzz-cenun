@@ -10,7 +10,7 @@ DISCORD: @tgoky
 
 TELEGRAM: @mollysznszn
 
-GOOGLE DRIVE LINK FOR PROJECT DEMO VIDEO: https://drive.google.com/file/d/1OV5hvHlTpjQ7jKA7UZDmjrUNhUQ1TUOl/view?usp=sharing
+LINK TO PROJECT DEMO VIDEO: https://drive.google.com/file/d/1OV5hvHlTpjQ7jKA7UZDmjrUNhUQ1TUOl/view?usp=sharing
 
 
 INTRODUCING CENUN DEFI
