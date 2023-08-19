@@ -66,7 +66,7 @@ SETTING UP THE PROJECT:
 Clone Repository using "Git clone" and repo link
 Navigate to the project directory and yarn install
 redeploy contracts on buzz smart contract hub
-replace contract addresses and test
+replace contract addresses and test.
 
 
 <img width="1075" alt="cenun1" src="https://github.com/tgoky/celo-bunzz-cenun/assets/62885573/cafb3b4c-e9c4-43b2-90b1-5267cc4145da">
