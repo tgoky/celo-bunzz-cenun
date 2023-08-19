@@ -32,12 +32,12 @@ const Staking = () => {
 
     stakingContract.on("Staked", (user, amount) => {
       console.log("Staked event:", user, amount);
-      // Update your UI or state accordingly
+
     });
 
     stakingContract.on("Withdrawn", (user, amount) => {
       console.log("Withdrawn event:", user, amount);
-      // Update your UI or state accordingly
+    
     });
   }, [account]);
 
