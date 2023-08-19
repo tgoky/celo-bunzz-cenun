@@ -12,6 +12,7 @@ TELEGRAM: @mollysznszn
 
 
 Introducing Cenun Defi
+
 Cenun is a Defi based Yield Farming Platform that optimizes the staking mechanism
 Cenun utilizes Web3 protocols, wherein users are afforded the opportunity to engage in token staking. By committing their tokens to a smart contract, users secure the capacity to recurrently redeem a "reCenun" utility token. This redemption process may be iteratively pursued until the exhaustion of reCenun in the claim pool. This cenun ecosystem elegantly intertwines staking mechanics with token issuance, underscoring the dynamic interplay between liquidity provision and resource acquisition, all orchestrated within a self-executing and tamper-resistant blockchain framework.
 
@@ -21,6 +22,7 @@ A certain amount of reCenun is deposited in the claim pool while the rest is add
 
 
 TESTING CENUN DEFI
+
 The Cenun Faucet is deployed and integrated into the dapp for testers/users to get CENUN tokens and stake. The process is straight forward,
 
 STEP ONE:
