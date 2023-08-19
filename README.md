@@ -10,6 +10,8 @@ DISCORD: @tgoky
 
 TELEGRAM: @mollysznszn
 
+GOOGLE DRIVE LINK FOR PROJECT DEMO VIDEO: https://drive.google.com/file/d/1OV5hvHlTpjQ7jKA7UZDmjrUNhUQ1TUOl/view?usp=sharing
+
 
 INTRODUCING CENUN DEFI
 
@@ -43,7 +45,6 @@ Users should click the Renegade Hydrate button and then on the dashboard, they c
 
 GITHUB LINK: https://github.com/tgoky/celo-bunzz-cenun
 
-GOOGLE DRIVE LINK FOR PROJECT DEMO VIDEO: https://drive.google.com/file/d/1OV5hvHlTpjQ7jKA7UZDmjrUNhUQ1TUOl/view?usp=sharing
 
 PROJECT WEBSITE: https://cenundefi.netlify.app/
 
