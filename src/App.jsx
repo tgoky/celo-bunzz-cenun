@@ -45,7 +45,9 @@ const App = () => {
       const signer = provider.getSigner();
       
       // Replace 'CONTRACT_ADDRESS' with the actual address of your smart contract
-      const faucetContract = '0x56D51d87149c7c617F695a69c0aDf2CeFb50A867';
+      
+      const faucetContract = '0x72869C843E3497ba064CF9479F640A4516c99A26';
+      
       const contract = new ethers.Contract(faucetContract, faucetABI, signer);
   
       // Send the transaction to the 'requestTokens' function

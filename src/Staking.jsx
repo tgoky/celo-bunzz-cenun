@@ -5,7 +5,7 @@ import stakingABI from "./ABI/staking.json";
 import tokenABI from "./abi.json"; 
 import { useWeb3React } from "@web3-react/core";
 
-
+//deployed contract addresses from bunzz smart contract hub
 const tokenAddress = '0x3F1f2DaD43c43F688B44130c7Ac52cFe6FfBAb8F'; 
 const contractAddress = '0x6Bc6fE4ADbFaa94d7b874AB31fA8D271C44E6147'; 
 

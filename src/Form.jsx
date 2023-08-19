@@ -5,10 +5,9 @@ import { Contract } from "ethers";
 import tokenABI from "./abi.json";
 
 
-// this is QUK contract testing address 
-const contractAddress = '0xddC6be4325173F976aC4A4e5b91154B90B601CF1';
+//deployed contract address from bunzz smart contract hub
+const contractAddress = '0x3F1f2DaD43c43F688B44130c7Ac52cFe6FfBAb8F';
 
-//further replace the above CA with contractAddress = '0x3F1f2DaD43c43F688B44130c7Ac52cFe6FfBAb8F';
 
 const Form = () => {
   const { account, library } = useWeb3React();
